@@ -8,6 +8,9 @@
 	--headline: #212529;
 	--paragraph: #495057;
 	--white: #ffffff;
+
+	--brand-beige: #fffaf1;
+	--brand-light: #dce9e2;
 	font-size: 62.5%; /* 1rem = 10px */
 }
 
@@ -16,12 +19,25 @@ body {
 	font-size: 1.6rem;
 
 	text-align: center;
-	background-color: #dce9e2;
 }
 
 header {
 	width: 37.5rem;
 	margin: auto;
+}
+
+header::before {
+	content: '';
+	width: 100vw;
+	height: 108rem;
+
+	background-color: var(--brand-light);
+	display: block;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 h4 {
@@ -61,10 +77,26 @@ button:hover {
 	filter: brightness(0.9);
 }
 
+/* Deixar imagem colada ao bloco de conteudo */
+.img-header {
+	display: block;
+	margin: 0 auto;
+	object-position: 0 0.5rem;
+}
+
 .content-attended {
-	background-color: #fffaf1;
-	max-width: 47rem;
-	height: 33rem;
+	width: 32.7rem;
+	margin-inline: auto;
+	padding-block: 4rem;
+
+	background-color: var(--brand-beige);
+	border: 1px solid var(--brand-light);
+	border-radius: 0.6rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 6rem;
 }
 
 .content-attended h3 {
@@ -75,6 +107,7 @@ button:hover {
 }
 
 .content-attended p {
+	margin: 0;
 	font-weight: 400;
 	font-size: 1.6rem;
 	line-height: 150%;
