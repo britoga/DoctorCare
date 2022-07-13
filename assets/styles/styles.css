@@ -1,3 +1,4 @@
+/* GLOBAL */
 * {
 	margin: 0;
 	box-sizing: border-box;
@@ -12,6 +13,8 @@
 	--brand-beige: #fffaf1;
 	--brand-light: #dce9e2;
 	font-size: 62.5%; /* 1rem = 10px */
+
+	--nav-height: 7.2rem;
 }
 
 body {
@@ -21,15 +24,54 @@ body {
 	text-align: center;
 }
 
-header {
+.wrapper {
 	width: 37.5rem;
-	margin: auto;
+	margin-inline: auto;
+	padding-inline: 2.4rem;
+}
+
+/* NAVIGATION */
+
+nav {
+	display: flex;
+	height: var(--nav-height);
+
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+nav .wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+nav.scroll {
+	width: 100vw;
+	background-color: var(--primary-color);
+	color: var(--white);
+}
+
+nav.scroll svg:nth-child(1) path {
+	fill: var(--white);
+}
+
+nav.scroll svg:nth-child(2) path {
+	stroke: var(--white);
+}
+
+/* HEADER */
+
+header {
+	margin-top: calc(4rem + var(--nav-height));
 }
 
 header::before {
 	content: '';
 	width: 100vw;
-	height: 108rem;
+	height: calc(108rem + var(--nav-height));
 
 	background-color: var(--brand-light);
 	display: block;
@@ -40,18 +82,18 @@ header::before {
 	z-index: -1;
 }
 
-h4 {
+header h4 {
 	font-size: 1.4rem;
 	color: var(--primary-color);
 	margin: 2.5rem auto 1.6rem auto;
 }
 
-h1 {
+header h1 {
 	font-size: 3.4rem;
 	margin: 0 auto 2.4rem auto;
 }
 
-p {
+header p {
 	font-size: 1.8rem;
 	line-height: 150%;
 	margin: 0 auto 3.2rem auto;
