@@ -82,7 +82,7 @@ nav.scroll {
 	color: var(--white);
 }
 
-nav.scroll svg:nth-child(1) path {
+nav.scroll .logo path {
 	fill: var(--white);
 }
 
@@ -131,10 +131,6 @@ body.menu-expanded .menu {
 	padding-top: var(--nav-height);
 
 	transition: opacity 500ms;
-}
-
-body.menu-expanded nav {
-	position: relative;
 }
 
 .menu ul:nth-child(1) {
