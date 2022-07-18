@@ -72,7 +72,7 @@ section header h2 {
 	text-align: center;
 
 	color: var(--headline);
-	margin: 0 0 6rem 0;
+	margin: 0 0 5rem 0;
 }
 
 section .content p {
@@ -253,11 +253,10 @@ body.menu-expanded button path {
 	gap: 16px;
 	background: var(--primary-color);
 	border-radius: 4rem;
-	margin: 0 auto;
 	color: var(--white);
 	text-transform: uppercase;
 	font-weight: 700;
-	margin: 0 auto 6rem auto;
+	margin: 3.2rem auto 6rem auto;
 	border: 0;
 }
 
