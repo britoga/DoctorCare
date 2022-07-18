@@ -46,9 +46,41 @@ li {
 }
 
 section {
-	padding-block: 10rem;
+	padding-block: 5rem;
 	/* padding-block se aplica para encima e embaixo */
 	/* Está sendo aplicado pois em toda section tem margem de 100px encima e embaixo de uma para outra */
+}
+
+section header h4 {
+	margin: 2.5rem auto 1.6rem auto;
+	/* margin: 0 0 1.6rem 0; */
+
+	font-weight: 700;
+	font-size: 1.4rem;
+	line-height: 150%;
+	text-transform: uppercase;
+
+	letter-spacing: 0.08rem;
+
+	color: var(--primary-color);
+}
+
+section header h2 {
+	font-weight: 700;
+	font-size: 3rem;
+	line-height: 3.9rem;
+	text-align: center;
+
+	color: var(--headline);
+	margin: 0 0 6rem 0;
+}
+
+section .content p {
+	margin: 0;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 150%;
+	color: var(--paragraph);
 }
 
 .wrapper {
@@ -208,21 +240,9 @@ body.menu-expanded button path {
 	z-index: -1;
 }
 
-#home h4 {
-	font-size: 1.4rem;
-	color: var(--primary-color);
-	margin: 2.5rem auto 1.6rem auto;
-}
-
 #home h1 {
 	font-size: 3.4rem;
 	margin: 0 auto 2.4rem auto;
-}
-
-#home p {
-	font-size: 1.8rem;
-	line-height: 150%;
-	margin: 0 auto 3.2rem auto;
 }
 
 #home button {
@@ -274,39 +294,7 @@ button:hover {
 	line-height: 130%;
 }
 
-#home .content-attended p {
-	margin: 0;
-	font-weight: 400;
-	font-size: 1.6rem;
-	line-height: 150%;
-	color: var(--primary-color);
-}
-
 /* SERVICES */
-
-#services header h4 {
-	font-weight: 700;
-	font-size: 1.4rem;
-	line-height: 150%;
-	text-transform: uppercase;
-
-	letter-spacing: 0.08rem;
-
-	color: var(--primary-color);
-	margin: 0 0 1.6rem 0;
-}
-
-#services header h2 {
-	font-weight: 700;
-	font-size: 3rem;
-	line-height: 3.9rem;
-	text-align: center;
-
-	/* Secondary Colors/gray-headline */
-
-	color: var(--headline);
-	margin: 0 0 6rem 0;
-}
 
 #services .cards {
 	display: flex;
@@ -326,4 +314,18 @@ button:hover {
 
 #services .card h3 {
 	margin: 1.6rem 0;
+}
+
+/* About  */
+
+#about-us {
+	background-color: var(--brand-beige);
+}
+
+#about-us header h4 {
+	text-align: left;
+}
+
+#about-us .content p {
+	margin-bottom: 6rem;
 }
