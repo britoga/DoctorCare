@@ -204,6 +204,10 @@ body.menu-expanded .menu {
 	text-decoration: none;
 }
 
+.menu ul li a:hover {
+	filter: brightness(0.9);
+}
+
 .menu .button {
 	background-color: var(--white);
 	border-radius: 4rem;
@@ -230,6 +234,10 @@ body.menu-expanded .menu {
 	align-items: center;
 	justify-content: center;
 	gap: 2rem;
+}
+
+.menu .social-links li:hover {
+	filter: brightness(0.8);
 }
 
 body.menu-expanded .logo,
@@ -379,4 +387,21 @@ footer ul {
 footer .social-links {
 	display: flex;
 	gap: 3.2rem;
+}
+
+/* Back To Top */
+
+#backToTop {
+	position: fixed;
+	bottom: 1rem;
+	right: 2.5rem;
+	visibility: hidden;
+
+	transform: translateY(100%);
+	transition: 150ms;
+}
+
+#backToTop.show {
+	visibility: visible;
+	transform: translateY(0);
 }
