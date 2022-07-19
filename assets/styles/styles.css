@@ -40,6 +40,28 @@ body {
 	background-color: var(--bg-light);
 }
 
+.button-whatsapp {
+	width: fit-content;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.6rem 3.2rem;
+	gap: 1.6rem;
+	background: var(--primary-color);
+	border-radius: 4rem;
+	color: var(--white);
+	text-transform: uppercase;
+	font-weight: 700;
+	margin: 3.2rem auto 6rem auto;
+	border: 0;
+	text-decoration: none;
+}
+
+.button-whatsapp:hover {
+	filter: brightness(0.9);
+}
+
 ul,
 li {
 	list-style: none;
@@ -199,6 +221,10 @@ body.menu-expanded .menu {
 	margin: 4rem 0 7rem 0;
 }
 
+.menu .button:hover {
+	filter: brightness(0.9);
+}
+
 .menu .social-links {
 	display: flex;
 	align-items: center;
@@ -243,25 +269,6 @@ body.menu-expanded button path {
 #home h1 {
 	font-size: 3.4rem;
 	margin: 0 auto 2.4rem auto;
-}
-
-#home button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 16px 32px;
-	gap: 16px;
-	background: var(--primary-color);
-	border-radius: 4rem;
-	color: var(--white);
-	text-transform: uppercase;
-	font-weight: 700;
-	margin: 3.2rem auto 6rem auto;
-	border: 0;
-}
-
-button:hover {
-	filter: brightness(0.9);
 }
 
 /* Deixar imagem colada ao bloco de conteudo */
@@ -327,4 +334,49 @@ button:hover {
 
 #about-us .content p {
 	margin-bottom: 6rem;
+}
+
+/* Contact-us */
+
+#contact-us {
+	text-align: left;
+}
+
+#contact-us ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+}
+
+#contact-us li {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+#contact-us .button-whatsapp {
+	margin: 3.2rem 0 6rem 0;
+}
+
+/* Footer */
+
+footer {
+	text-align: left;
+	background-color: var(--primary-color);
+	padding-block: 6rem;
+	color: var(--white);
+}
+
+footer .logo {
+	display: inline-block;
+	margin-bottom: 2.4rem;
+}
+
+footer ul {
+	margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+	display: flex;
+	gap: 3.2rem;
 }
