@@ -106,7 +106,7 @@ section .content p {
 }
 
 .wrapper {
-	width: 37.5rem;
+	width: min(50rem, 100%);
 	margin-inline: auto;
 	padding-inline: 2.4rem;
 }
@@ -150,6 +150,11 @@ nav button {
 	cursor: pointer;
 }
 
+nav .menu,
+nav .close-menu {
+	position: fixed;
+}
+
 /* MENU */
 
 body.menu-expanded {
@@ -174,7 +179,6 @@ body.menu-expanded .close-menu {
 }
 
 body.menu-expanded .menu {
-	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: var(--primary-color);
@@ -287,7 +291,7 @@ body.menu-expanded button path {
 }
 
 #home .content-attended {
-	width: 32.7rem;
+	width: 100%;
 	margin-inline: auto;
 	padding-block: 4rem;
 
@@ -404,4 +408,79 @@ footer .social-links {
 #backToTop.show {
 	visibility: visible;
 	transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+/* Codando com first mobile, primeiro fazemos o layout todo para a versão mobile e após isso, criamos alguns viewports para ir ajustando, é bom lembrar que voltamos as propriedades ao valor INITIAL para poder trabalhar com eles ao entrar em responsivo  */
+
+@media (min-width: 1024px) {
+	.wrapper {
+		width: min(112rem, 100%);
+	}
+
+	nav#navigation .wrapper * {
+		margin: 0;
+		padding: 0;
+		visibility: initial;
+		display: initial;
+		opacity: initial;
+		flex-direction: initial;
+		position: initial;
+		font-size: initial;
+		font-weight: initial;
+		transform: initial;
+		color: initial;
+		background-color: initial;
+	}
+
+	nav#navigation .close-menu,
+	nav#navigation .open-menu,
+	nav#navigation .social-links {
+		display: none;
+	}
+
+	nav#navigation .menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 60%;
+	}
+
+	nav#navigation ul:nth-child(1) {
+		display: flex;
+		gap: 3.2rem;
+	}
+
+	nav#navigation .menu ul li a {
+		color: var(--primary-color);
+		opacity: 0.7;
+	}
+
+	nav#navigation .menu a.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem 2.4rem;
+
+		border: 1px solid var(--primary-color);
+		border-radius: 4rem;
+
+		color: var(--primary-color);
+
+		font-weight: 700;
+		font-size: 1.4rem;
+		line-height: 1.8rem;
+		text-transform: uppercase;
+	}
+
+	nav#navigation.scroll .menu ul li a {
+		color: var(--bg-light);
+		opacity: 0.7;
+	}
+
+	nav#navigation.scroll a.button {
+		color: var(--white);
+		border-color: var(--white);
+	}
 }
