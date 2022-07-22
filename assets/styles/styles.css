@@ -13,6 +13,7 @@
 
 	--brand-beige: #fffaf1;
 	--brand-light: #dce9e2;
+	--brand-light02: #f7f9f9;
 
 	--bg-light: #f7f9f9;
 	font-size: 62.5%; /* 1rem = 10px */
@@ -230,7 +231,7 @@ body.menu-expanded .menu {
 }
 
 .menu .button:hover {
-	filter: brightness(0.9);
+	filter: brightness(0.8);
 }
 
 .menu .social-links {
@@ -454,7 +455,7 @@ footer .social-links {
 
 	nav#navigation .menu ul li a {
 		color: var(--primary-color);
-		opacity: 0.7;
+		/* opacity: 0.7; */
 	}
 
 	nav#navigation .menu a.button {
@@ -475,12 +476,28 @@ footer .social-links {
 	}
 
 	nav#navigation.scroll .menu ul li a {
-		color: var(--bg-light);
-		opacity: 0.7;
+		color: var(--brand-light02);
+		opacity: 0.8;
 	}
 
 	nav#navigation.scroll a.button {
 		color: var(--white);
 		border-color: var(--white);
+	}
+
+	nav#navigation .menu ul li a:hover {
+		opacity: 1;
+		font-weight: 700;
+		text-decoration: underline;
+		transition: 150ms;
+		color: var(--primary-color);
+	}
+
+	nav#navigation.scroll .menu ul li a:hover {
+		opacity: 1;
+		font-weight: 700;
+		text-decoration: underline;
+		transition: 150ms;
+		color: var(--brand-light02);
 	}
 }
