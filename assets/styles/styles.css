@@ -7,6 +7,7 @@
 
 :root {
 	--primary-color: #00856f;
+	--primary-color-opacity-50: #00856f80
 	--headline: #212529;
 	--paragraph: #495057;
 	--white: #ffffff;
@@ -37,7 +38,7 @@ body {
 
 	text-align: center;
 
-	overflow: overlay;
+	/* overflow: overlay; */
 	background-color: var(--bg-light);
 }
 
@@ -268,7 +269,8 @@ body.menu-expanded button path {
 #home::before {
 	content: '';
 	width: 100%;
-	height: calc(108rem + var(--nav-height));
+	height: 125%; /* Color Background */
+	/* height: calc(96% - var(--nav-height)); */
 
 	background-color: var(--brand-light);
 	display: block;
@@ -291,7 +293,7 @@ body.menu-expanded button path {
 	object-position: 0 0.5rem;
 }
 
-#home .content-attended {
+#home .stats {
 	width: 100%;
 	margin-inline: auto;
 	padding-block: 4rem;
@@ -306,7 +308,7 @@ body.menu-expanded button path {
 	gap: 6rem;
 }
 
-#home .content-attended h3 {
+#home .stats h3 {
 	color: var(--headline);
 	font-weight: 700;
 	font-size: 4.8rem;
@@ -416,9 +418,23 @@ footer .social-links {
 /* Codando com first mobile, primeiro fazemos o layout todo para a versão mobile e após isso, criamos alguns viewports para ir ajustando, é bom lembrar que voltamos as propriedades ao valor INITIAL para poder trabalhar com eles ao entrar em responsivo  */
 
 @media (min-width: 1024px) {
+
+	/* GERAL */
+
+	body{
+		overflow: auto;
+	}
+
 	.wrapper {
 		width: min(112rem, 100%);
+		display: grid;
 	}
+
+	section {
+		padding-block: 16rem;
+	}
+
+
 
 	nav#navigation .wrapper * {
 		margin: 0;
@@ -500,4 +516,76 @@ footer .social-links {
 		transition: 150ms;
 		color: var(--brand-light02);
 	}
+
+	/* HOME */
+
+	#home {
+		padding-block: 0; /* Removendo o paddind-block do first mobile */
+		padding-top: var(--nav-height);
+	}
+
+	#home::before{
+		/* height: calc(76% - var(--nav-height)); */
+		height: 83%;
+	}
+
+	#home .wrapper {
+		grid-template-columns: 60.5rem 1fr;
+		grid-template-areas:
+			'A B'
+			'C C';
+	}
+
+	#home .col-a {
+		grid-area: A;
+		text-align: left;
+		align-self: center;
+	}
+
+	#home .col-b {
+		grid-area: B;
+	}
+
+	#home header h1 {
+		font-size: 5.2rem;
+	}
+
+	#home .content p {
+		font-size: 1.8rem;
+	}
+
+	#home .stats {
+		grid-area: C;
+
+		flex-direction: row;
+		padding: 6rem;
+		gap: 0;
+	}
+
+	/* Lógica paga ele capturar o elemento que tem um elemento atras dele */
+	/* Entra em .stats .stat e procura o + .stat que tem um stat antes dele */
+	#home .stats .stat + .stat {
+		border-left: 1px solid var(--primary-color-opacity-50);
+	}
+
+	#home .stats .stat {
+		flex: 1;
+	}
+
+	#home .button-whatsapp {
+		margin: 3.2rem 0;
+	}
+
+	#home .img-header {
+		width: 42rem;
+	}
+
+	/* Services */
+
+	#services h2 {
+		font-size: 4rem;
+		line-height: 5.2rem;
+	}
+
+
 }
