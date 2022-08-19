@@ -1,9 +1,9 @@
 function onScroll() {
 	showNavOnScroll();
 	showBackToTopOnScroll();
-	// activateMenuAtCurrentSection(services);
-	// activateMenuAtCurrentSection(about);
-	activateMenuAtCurrentSection(contact);
+	activateMenuAtCurrentSection(services);
+	activateMenuAtCurrentSection(about);
+	// activateMenuAtCurrentSection(contact);
 }
 
 // Para marcar no header aonde estamos, destacando o campo que estamos scrollando no momento

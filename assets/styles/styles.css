@@ -42,6 +42,11 @@ body {
 	background-color: var(--bg-light);
 }
 
+.active{
+	color: var(--white) !important;
+	text-decoration: underline !important;
+}
+
 .button-whatsapp {
 	width: fit-content;
 
@@ -352,47 +357,47 @@ body.menu-expanded button path {
 
 /* About  */
 
-#about-us {
+#about {
 	background-color: var(--brand-beige);
 }
 
-#about-us header h4 {
+#about header h4 {
 	text-align: left;
 }
 
-#about-us .content p {
+#about .content p {
 	margin-bottom: 6rem;
 }
 
-#about-us img {
+#about img {
 	width: 32.7rem;
 	height: 28.2rem;
 }
 
-/* Contact-us */
+/* Contact */
 
-#contact-us {
+#contact {
 	/* text-align: left; */
 }
 
-#contact-us ul {
+#contact ul {
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;
 }
 
-#contact-us li {
+#contact li {
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
 }
 
-#contact-us .col-b img {
+#contact .col-b img {
 	width: 32.4rem;
 	height: 21.3rem;
 }
 
-#contact-us .button-whatsapp {
+#contact .button-whatsapp {
 	margin: 3.2rem 0 6rem 0;
 }
 
@@ -620,44 +625,44 @@ footer .social-links {
 
 	/* ABOUT */
 
-	#about-us .wrapper {
+	#about .wrapper {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: "B A";
 		gap: 6.7rem;
 	}
 
-	#about-us .col-a {
+	#about .col-a {
 		align-self: center;
 	}
 
-	#about-us .content p {
+	#about .content p {
 		margin-bottom: 0;
 	}
 
-	#about-us img {
+	#about img {
 
 		width: auto;
 		height: auto;
 	}
 
-	/* Contact-us */
+	/* Contact */
 
-	#contact-us .wrapper {
+	#contact .wrapper {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: "A B";
 		gap: 6.7rem;
 	}
 
-	#contact-us .col-a {
+	#contact .col-a {
 		align-self: center;
 	}
 
-	#contact-us header h2 {
+	#contact header h2 {
 		max-width: 30.4rem;
 		text-align: left;
 	}
 
-	#contact-us .col-b img {
+	#contact .col-b img {
 		width: 100%;
 		height: 100%;
 	}
