@@ -3,7 +3,7 @@ function onScroll() {
 	showBackToTopOnScroll();
 	activateMenuAtCurrentSection(services);
 	activateMenuAtCurrentSection(about);
-	// activateMenuAtCurrentSection(contact);
+	activateMenuAtCurrentSection(home);
 }
 
 // Para marcar no header aonde estamos, destacando o campo que estamos scrollando no momento
@@ -24,6 +24,12 @@ function activateMenuAtCurrentSection(section) {
 	const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
 
 	menuElement.classList.remove('active');
+
+	// Não aparecer quando o menu não tiver ação do scroll
+	if (scrollY <= 0) {
+		menuElement.classList.remove('active');
+	}
+
 	if (sectionBoundaries) {
 		menuElement.classList.add('active');
 	}
