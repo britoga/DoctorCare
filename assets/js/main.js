@@ -1,38 +1,32 @@
 function onScroll() {
 	showNavOnScroll();
 	showBackToTopOnScroll();
-	activateMenuAtCurrentSection(services);
-	// activateMenuAtCurrentSection();
+	// activateMenuAtCurrentSection(services);
+	// activateMenuAtCurrentSection(about);
+	activateMenuAtCurrentSection(contact);
 }
 
 // Para marcar no header aonde estamos, destacando o campo que estamos scrollando no momento
 function activateMenuAtCurrentSection(section) {
-	// Linha imaginaria que sempre vai se localizar ao meio da pagina com ou sem o scroll, linha fixa ao meio da PAG
 	const targetLine = scrollY + innerHeight / 2;
 
-	// Verificar se o topo está acima da linha
-	const sectionTop = section.offsetTop; // offsetTop função nativa para indentificar o topo de uma seção, nesse caso é a home
-
-	const sectionHeight = section.offsetHeight; // offsetHeight função nativa para indentificar a altura da seção, que nos da um numero antes de começar a proxima seção
-
+	const sectionTop = section.offsetTop;
+	const sectionHeight = section.offsetHeight;
 	const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
 
-	// Informações
-	console.log('O topo da sessão passou da linha? ', sectionTopReachOrPassedTargetLine);
-
-	// Verificar se a base está abaixo da linha
-	// Quais dados vou precisar?
-
-	// A sessão termina aonde?
 	const sectionEndsAt = sectionTop + sectionHeight;
-	console.log('sectionEndsAt', sectionEndsAt);
-
-	// O final da sessão passou da linha alvo?
 	const sectionEndPassedTargetLine = sectionEndsAt <= targetLine;
 
-	console.log(sectionEndPassedTargetLine);
-
 	// Limites da sessão
+	const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
+
+	const sectionId = section.getAttribute('id');
+	const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
+
+	menuElement.classList.remove('active');
+	if (sectionBoundaries) {
+		menuElement.classList.add('active');
+	}
 }
 
 function showNavOnScroll() {
@@ -67,4 +61,4 @@ ScrollReveal({
 	origin: 'top',
 	distance: '30px',
 	duration: 700,
-}).reveal('#home, #home img, #home .stats, #services, #services header, #services .card', '#about-us', '#about-us header', '#about-us .services');
+}).reveal('#home, #home img, #home .stats, #services, #services header, #services .card', '#about', '#about header', '#about .services');
